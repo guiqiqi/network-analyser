@@ -27,7 +27,7 @@ class WiFi(Plugin):
             info.append(f'{signal}db')
         if hasattr(profile, 'freq'):
             freq = int(getattr(profile, 'freq'))
-            info.append(f'{freq / 1e6}MHz')
+            info.append(f'{freq / 1e6}GHz')
         return ' '.join(info)
 
     def run(self) -> t.Iterator[str]:

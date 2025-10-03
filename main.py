@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     if sys.platform == 'win32':
         from src.plugins import WiFi
-        wifi = WiFi()
+        wifi = WiFi(scanning=5)
         plguins.append(wifi)
 
     app = App(plguins)
