@@ -1,0 +1,58 @@
+version = 1
+revision = 3
+requires-python = ">=3.10"
+
+[[package]]
+name = "comtypes"
+version = "1.4.12"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/b6/b8/3af03195b9de515448292169c6d6d7a630de02bedf891a47b809638c186f/comtypes-1.4.12.zip", hash = "sha256:3ff06c442c2de8a2b25785407f244eb5b6f809d21cf068a855071ba80a76876f", size = 280541, upload-time = "2025-08-27T23:47:33.155Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/2d/01/89285549c5138009db68f26c80f2174d0ec82a858547df0cc40a8b0a47d6/comtypes-1.4.12-py3-none-any.whl", hash = "sha256:e0fa9cc19c489fa7feea4c1710f4575c717e2673edef5b99bf99efd507908e44", size = 253704, upload-time = "2025-08-27T23:47:31.58Z" },
+]
+
+[[package]]
+name = "dnspython"
+version = "2.8.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz", hash = "sha256:181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f", size = 368251, upload-time = "2025-09-07T18:58:00.022Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ba/5a/18ad964b0086c6e62e2e7500f7edc89e3faa45033c71c1893d34eed2b2de/dnspython-2.8.0-py3-none-any.whl", hash = "sha256:01d9bbc4a2d76bf0db7c1f729812ded6d912bd318d3b1cf81d30c0f845dbf3af", size = 331094, upload-time = "2025-09-07T18:57:58.071Z" },
+]
+
+[[package]]
+name = "network-analyser"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "comtypes" },
+    { name = "dnspython" },
+    { name = "pywifi" },
+    { name = "scapy" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "comtypes", specifier = ">=1.4.12" },
+    { name = "dnspython", specifier = ">=2.8.0" },
+    { name = "pywifi", specifier = ">=1.1.12" },
+    { name = "scapy", specifier = ">=2.6.1" },
+]
+
+[[package]]
+name = "pywifi"
+version = "1.1.12"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/b4/83/af4c284db4a9c87af92525f1d755426e9dc04aef80be8c54b0ae6628105d/pywifi-1.1.12.tar.gz", hash = "sha256:6da15de5d573635a461a95919920788b6f61748e1bd93a5e3504f456cf2e8bcc", size = 13071, upload-time = "2019-01-26T15:10:05.492Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/89/55/170a52685eeefeab36bfaf26bdca629263a0a28efffc3b556b2cc86ab966/pywifi-1.1.12-py3-none-any.whl", hash = "sha256:d1b79d9ff054eef1aca4ab97f2641650d001d6740bfa7666a7d9506bcfb8459b", size = 15693, upload-time = "2019-01-26T15:10:04.169Z" },
+]
+
+[[package]]
+name = "scapy"
+version = "2.6.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/df/2f/035d3888f26d999e9680af8c7ddb7ce4ea0fd8d0e01c000de634c22dcf13/scapy-2.6.1.tar.gz", hash = "sha256:7600d7e2383c853e5c3a6e05d37e17643beebf2b3e10d7914dffcc3bc3c6e6c5", size = 2247754, upload-time = "2024-11-05T08:43:23.488Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4b/34/8695b43af99d0c796e4b7933a0d7df8925f43a8abdd0ff0f6297beb4de3a/scapy-2.6.1-py3-none-any.whl", hash = "sha256:88a998572049b511a1f3e44f4aa7c62dd39c6ea2aa1bb58434f503956641789d", size = 2420670, upload-time = "2024-11-05T08:43:21.285Z" },
+]
