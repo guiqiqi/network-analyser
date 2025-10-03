@@ -9,6 +9,7 @@ if __name__ == '__main__':
     from src.plugins import IFConfig
     from src.plugins import TraceRoute
     from src.plugins import DNS
+    from src.plugins import ExternalIP
     plguins.append(IFConfig())
 
     if sys.platform == 'win32':
@@ -22,6 +23,7 @@ if __name__ == '__main__':
     ]))
 
     plguins.append(TraceRoute('1.1.1.1'))
+    plguins.append(ExternalIP('https://api.ipify.org'))
 
     app = App(plguins)
     app.run()
