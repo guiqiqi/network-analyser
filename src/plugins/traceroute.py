@@ -56,6 +56,10 @@ class TraceRoute(Plugin):
                 else:
                     hop.append((reply.src, rtt))
 
+                # Multiple check if reached
+                if reply and reply.src == host:
+                    reached = True
+
             yield f'{ttl:>2}: {self._format(hop)}'
             ttl += 1
 
