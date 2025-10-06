@@ -84,7 +84,7 @@ class TraceRoute(Plugin):
                 if not line:
                     break
                 encoding = chardet.detect(line)
-                line = line.decode(encoding, errors='ignore')
+                line = line.decode(encoding['encoding'], errors='ignore')
                 yield line.strip()
             else:
                 break
