@@ -24,3 +24,5 @@ class DNS(Plugin):
                 yield f'{domain}: {", ".join(addresses)}'
             except dns.resolver.NoAnswer:
                 yield f'{domain}: no answer'
+            except dns.resolver.LifetimeTimeout:
+                yield f'{domain}: timeout'
