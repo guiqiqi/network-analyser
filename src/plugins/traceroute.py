@@ -79,9 +79,9 @@ class TraceRoute(Plugin):
         process = Popen(['tracert', host], stdout=PIPE)
         while True:
             if process.stdout:
-                line = process.stdout.readline().decode()
+                line = process.stdout.readline().decode(errors='replace')
                 if not line:
                     break
-                yield line
+                yield line.strip()
             else:
                 break
