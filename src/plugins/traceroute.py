@@ -8,6 +8,7 @@ from . import Plugin
 
 from scapy.all import sr1
 from scapy.layers.inet import IP, UDP
+import chardet
 
 
 class TraceRoute(Plugin):
@@ -79,9 +80,11 @@ class TraceRoute(Plugin):
         process = Popen(['tracert', host], stdout=PIPE)
         while True:
             if process.stdout:
-                line = process.stdout.readline().decode(errors='replace')
+                line = process.stdout.readline()
                 if not line:
                     break
+                encoding = chardet.detect(line)
+                line = line.decode(encoding, errors='ignore')
                 yield line.strip()
             else:
                 break
