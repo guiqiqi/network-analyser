@@ -34,4 +34,7 @@ class WiFi(Plugin):
         self.iface.scan()
         time.sleep(self.scanning)
         for ap in self.iface.scan_results():
-            yield self._format(ap)
+            try:
+                yield self._format(ap)
+            except RuntimeError:
+                continue
