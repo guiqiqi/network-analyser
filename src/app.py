@@ -11,8 +11,11 @@ class App:
 
     def __init__(self, plugins: t.List[Plugin]) -> None:
         self.plugins = plugins
+        ui.runbtn.config(command=self._run_diagnostic)
+        
+    def _run_diagnostic(self) -> None:
         diagnostic = threading.Thread(target=self.diagnostic, daemon=True)
-        ui.runbtn.config(command=diagnostic.start)
+        diagnostic.start()
 
     def diagnostic(self) -> None:
         ui.runbtn.config(state=tk.DISABLED)
