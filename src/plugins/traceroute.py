@@ -2,13 +2,13 @@ import typing as t
 import sys
 import time
 import socket
+import locale
 from subprocess import Popen, PIPE
 
 from . import Plugin
 
 from scapy.all import sr1
 from scapy.layers.inet import IP, UDP
-import chardet
 
 
 class TraceRoute(Plugin):
@@ -83,8 +83,8 @@ class TraceRoute(Plugin):
                 line = process.stdout.readline()
                 if not line:
                     break
-                encoding = chardet.detect(line)
-                line = line.decode(encoding['encoding'], errors='ignore')
+                encoding = locale.getpreferredencoding()
+                line = line.decode(encoding, errors='ignore')
                 yield line.strip()
             else:
                 break
